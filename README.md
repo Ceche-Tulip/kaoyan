@@ -206,6 +206,61 @@ kaoyan/
 └── static/              # 静态文件
 ```
 
+## 设计图表
+
+### 系统功能图
+```mermaid
+flowchart TD
+    classDef process fill:#E5F6FF,stroke:#73A6FF,stroke-width:2px
+    
+    A(考研<br>推荐<br>系统):::process
+    A --> B(用户<br>系统):::process
+    A --> C(用户<br>交互):::process
+    A --> D(信息<br>查询):::process
+    A --> E(数据<br>可视化):::process
+    
+    subgraph 用户系统
+    style 用户系统 fill:#ffffff,stroke:#000000,stroke-width:1px
+    B1(用户<br>注册<br>与<br>登录):::process
+    B2(个人<br>信息<br>管理):::process
+    B3(权限<br>控制):::process
+    end
+    
+    subgraph 用户交互
+    style 用户交互 fill:#ffffff,stroke:#000000,stroke-width:1px
+    C1(用户<br>对院校<br>评分):::process
+    C2(收藏<br>院校<br>管理):::process
+    C3(评分<br>记录<br>查看<br>与<br>管理):::process
+    end
+    
+    subgraph 信息查询
+    style 信息查询 fill:#ffffff,stroke:#000000,stroke-width:1px
+    D1(查<br>分数线):::process
+    D2(查<br>报录比):::process
+    D3(院校<br>推荐):::process
+    end
+    
+    subgraph 数据可视化
+    style 数据可视化 fill:#ffffff,stroke:#000000,stroke-width:1px
+    E1(数据<br>可视化<br>展示):::process
+    end
+    
+    B --> B1
+    B --> B2
+    B --> B3
+    
+    C --> C1
+    C --> C2
+    C --> C3
+    
+    D --> D1
+    D --> D2
+    D --> D3
+    
+    E --> E1
+```
+
+
 ## 注意事项
 - 本项目使用Django的SimpleUI美化后台界面
 - 默认语言设置为中文，时区为上海
