@@ -88,7 +88,7 @@ class ScoreLine(models.Model):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.year, self.school, self.department, self.code, self.name
+        return f"{self.year} - {self.school} - {self.department} - {self.code} - {self.name}"
 
 
 # 报录比表
@@ -111,7 +111,7 @@ class Rate(models.Model):
     rate = models.DecimalField(verbose_name="报录比", max_digits=10, decimal_places=2, default=0, null=True)
 
     def __str__(self):
-        return self.year, self.school, self.department, self.code, self.name
+        return f"{self.year} - {self.school} - {self.department} - {self.code} - {self.name}"
 
     class Meta:
         verbose_name = "报录比"
